@@ -6,7 +6,7 @@
 #    By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:31:56 by dpaunovi          #+#    #+#              #
-#    Updated: 2016/12/18 15:40:51 by dpaunovi         ###   ########.fr        #
+#    Updated: 2016/12/18 20:17:38 by dpaunovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@cd $(LIBDIR) && make #&& make clean
+	@cd $(LIBDIR) && make
 	@$(CC) -L $(LIBDIR) -l$(LIB) $(LDFLAGS) -o $@ $(OBJ)
 	@echo "\033[32mfillit created"
 
@@ -34,7 +34,7 @@ $(NAME): $(OBJ)
 clean:
 	@rm -rf $(OBJ)
 	@cd $(LIBDIR) && make clean
-	@echo "\033[36mFiles .o as been clear"
+	@echo "\033[36mFiles .o has been deleted"
 
 fclean: clean
 	@rm -rf $(NAME)
